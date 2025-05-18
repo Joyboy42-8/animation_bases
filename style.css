@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.8rem;
+}
+
+:root {
+  --primary-blue: #5AA9E6;
+  --light-blue: #7FC8F8;
+  --light-bg: #F9F9F9;
+  --accent-yellow: #FFE45E;
+  --accent-pink: #FF6392;
+  --text-dark: #1a1a1a;
+}
+
+body {
+  background-color: var(--text-dark);
+  color: var(--text-dark);
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  color: var(--primary-blue);
+}
+
+.box {
+  background-color: black;
+  width: 100px;
+  height: 100px;
+  margin: 50px 20px;
+  color: var(--accent-pink);
+  display: grid;
+  place-items: center;
+  font-weight: bolder;
+}
+
+header, header a {
+  background-color: var(--accent-pink);
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Exo 1 */
+.intermittent {
+  animation: intermittent 2s ease-in alternate infinite;
+  will-change: transform;
+}
+@keyframes intermittent {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100vw - 500px));
+  }
+}
+
+/* Exo 2 */
+.zoom {
+  margin: 2rem auto;
+  animation: zoom 0.6s ease-in alternate infinite;
+  will-change: transform;
+}
+@keyframes zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+/* Exo 3 */
+.turn {
+  margin: 100px auto;
+  animation: turn 0.6s ease-in infinite;
+  will-change: transform;
+}
+@keyframes turn {
+  to {
+    transform: rotate(360deg) scale(1.1);
+  }
+}
+
+/* Exo 4 */
+.multiple {
+  animation: multiple 3s ease-in infinite;
+  will-change: transform;
+}
+@keyframes multiple {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(calc(100vw - 450px));
+  }
+  75% {
+    transform: translateX(calc(100vw - 500px)) rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    background-color: brown;
+  }
+}
+
+/* Exo 5 */
+.relais {
+  margin: 100px 0 0 0;
+  padding: 20px;
+  background-color: var(--light-blue);
+}
+.relais_one {
+  animation: vas_y 4s ease-in-out 2s forwards 3;
+}
+.relais_two {
+  animation: vas_y 4s ease-in-out 6s forwards 2;
+}
+.relais_three {
+  animation: vas_y 4s ease-in-out 10s forwards 1;
+}
+
+@keyframes vas_y {
+  0% {
+    transform: translateX(0);
+    background-color: bisque;
+    color: black;
+  }
+  50% {
+    transform: translateX(calc(100vw - 500px));
+    background-color: coral;
+    color: black;
+  }
+  90% {
+    transform: translateX(0);
+    background-color: chocolate;
+    color: black;
+  }
+  100% {
+    background-color: black;
+    color: white;
+  }
+}
+
+/* Exo 6 */
+.one {
+  animation: rebond 2s infinite;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  margin: 2rem auto;
+}
+@keyframes rebond {
+  from {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2) translateY(20px);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.two {
+  background-color: black;
+  width: 50px;
+  height: 30px;
+  margin: 50px 0;
+  animation: elastic 2s alternate infinite;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* rebond */
+}
+
+@keyframes elastic {
+  to {
+    width: calc(100vw - 500px);
+    transform: scaleY(2);
+  }
+}
+
+.three {
+  border-radius: 50%;
+  animation: turn 1s infinite;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* rebond */
+}
+
+/* Exo 6 */
+.anime_js {
+  animation: animeJS 5s alternate infinite;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* rebond */
+}
+
+@keyframes animeJS {
+  0% {
+    transform: translateX(0) scale(1.1);
+  }
+  50% {
+    transform: translateX(calc(50vw - 400px)) scale(0.9); /* rebond vers le milieu */
+  }
+  100% {
+    transform: translateX(calc(100vw - 500px)) scale(1.5);
+  }
+}
+
+/* Exo 7 */
+.letters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 3rem;
+  font-weight: bold;
+  width: 50vw;
+  margin: auto;
+}
+.letters span {
+  padding: 20px;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: lettreZoom 0.6s alternate infinite 2s;
+  font-size: 2rem;
+  font-family: 'Segoe UI', Verdana, sans-serif;
+  color: black;
+}
+.letters span:nth-child(1) {
+  animation-delay: 0s;
+  transform: translateY(30px);
+}
+.letters span:nth-child(2) {
+  animation-delay: 0.1s;
+  transform: translateY(30px);
+}
+.letters span:nth-child(3) {
+  animation-delay: 0.2s;
+  transform: translateY(30px);
+}
+.letters span:nth-child(4) {
+  animation-delay: 0.3s;
+  transform: translateY(30px);
+}
+.letters span:nth-child(5) {
+  animation-delay: 0.4s;
+  transform: translateY(30px);
+}
+.letters span:nth-child(6) {
+  animation-delay: 0.4s;
+  transform: translateY(30px);
+}
+
+@keyframes lettreZoom {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(-30px);
+  }
+}
+
+
+footer {
+  background-color: var(--light-bg);
+  color: black;
+  text-align: center;
+  padding: 50px;
+  font-size: 1.1rem;
+}
