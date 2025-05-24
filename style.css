@@ -312,3 +312,26 @@ footer {
   padding: 50px;
   font-size: 1.1rem;
 }
+
+
+/* Animation 11 */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 10px solid black;
+    border-top: 10px solid var(--accent-pink);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
