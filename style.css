@@ -335,3 +335,39 @@ footer {
     0% { opacity: 1; }
     100% { opacity: 0; }
 }
+
+/* Animation 12 */
+.progress_bar {
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  background-color: black;
+}
+.progress_item {
+  width: 0%;
+  height: inherit;
+  border-radius: inherit;
+  background-color: var(--accent-pink);
+  animation: progress 2s ease-in infinite;
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  20% {
+    width: 20%;
+  }
+  40% {
+    width: 40%;
+  }
+  60% {
+    width: 60%;
+  }
+  80% {
+    width: 80%;
+  }
+  to {
+    width: 100%;
+  }
+}
