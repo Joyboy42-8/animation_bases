@@ -371,3 +371,18 @@ footer {
     width: 100%;
   }
 }
+
+.scale div {
+  border-radius: 50%;
+  background-color: black;
+  animation: scale_load 1s alternate infinite;
+}
+
+@keyframes scale_load {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
